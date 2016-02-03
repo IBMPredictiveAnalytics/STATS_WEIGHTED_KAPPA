@@ -1,10 +1,11 @@
 # STATS_WEIGHTED_KAPPA
-## Provides the weighted version of Cohen's kappa for two raters, using either linear or quadratic weights, as well as confidence interval and test statistic.
+## Weighted kappa statistic using linear or quadratic weights
+Provides the weighted version of Cohen's kappa for two raters, using either linear or quadratic weights, as well as confidence interval and test statistic.
 
 ---
 Requirements
 ----
-- IBM SPSS Statistics 18 or later
+- IBM SPSS Statistics 19 or later and the corresponding IBM SPSS Statistics-Integration Plug-in for Python.
 
 ---
 Installation intructions
