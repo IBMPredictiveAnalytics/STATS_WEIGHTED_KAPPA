@@ -1,0 +1,69 @@
+﻿<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+<title>STATS WEIGHTED KAPPA Extension Command</title>
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+</head>
+
+<body>
+<h1>STATS WEIGHTED KAPPA Extension Command</h1>
+
+<p>Calculate weighted kappa statistic and associated quantities. This procedure provides an 
+estimate of weighted kappa using linear or quadratic weighting, along with asymptotic standard 
+error, Z statistic, significance or p value under the null hypothesis of chance agreement and 
+confidence interval for kappa. The Z statistic and p value are computed using an asymptotic 
+standard error (ASE) that assumes the null hypothesis (sometimes denoted ASE0). The ASE shown 
+does not assume the null hypothesis (sometimes denoted ASE1). The confidence intervals are 
+computed using this ASE1 value. Formulas are taken from Fleiss, Levin & Paik (2003).
+</p>
+
+<p><strong>Note: </strong>This extension command does not support split files. All complete cases in the active dataset are used. Cases missing on any specified variable(s) are not used. 
+Weights are accepted but are rounded to integers.</>
+
+<div class="syntax">
+
+<p>STATS WEIGHTED KAPPA VARIABLES=<em>varlist<sup>&#42;</sup></em><br>
+/OPTIONS WTTYPE=<em>number (1)<sup>&#42;</sup><sup>&#42;</sup> </em>CILEVEL=<em>percentage (95)<sup>&#42;</sup><sup>&#42;</sup></em></p>
+
+<p>/HELP</p>
+
+<p><sup>&#42;</sup> Required
+<br/>
+<sup>&#42;</sup><sup>&#42;</sup> Default</p>
+</div>
+
+<p>/HELP displays this help and does nothing else.</p>
+
+
+
+<pre class="example">
+<br>
+<code>STATS WEIGHTED KAPPA VARIABLES=rating1 rating2
+/OPTIONS WTTYPE=1 CILEVEL=95.
+</code>
+</pre>
+
+<p><strong>VARIABLES</strong> is the list of rating variables. Exactly two variables must be specified (the "TO" and "ALL" conventions are allowed). These cannot be date or time variables. 
+The possible rating categories must be consecutive positive integers beginning with 1.</p>
+
+<p><strong>WTTYPE</STRONG> is the weighting power. It must be 1 (for linear weighting) or 2 (for quadratic weighting). It defaults to 1.</p>
+
+<p><strong>CILEVEL</STRONG> is the confidence level for confidence intervals expressed as a percentage. It cannot be less
+than 50 or greater than 99.999. It defaults to 95.</p>
+
+<br>
+
+<h2>Reference</h2>
+<P>
+Fleiss, J. L., Levin, B., & Paik, M. C. (2003). <I>Statistical methods for rates and proportions (3rd ed.)</I>. Hoboken, NJ: John
+Wiley & Sons.
+</P>
+
+<br>
+
+<p>&copy; Copyright IBM Corp. 1989, 2015</p>
+
+
+</body>
+</html>

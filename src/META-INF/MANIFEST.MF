@@ -2,15 +2,18 @@ Name: STATS WEIGHTED KAPPA
 Dialog-Specs: STATS_WEIGHTED_KAPPA.spd
 Command-Specs: STATS_WEIGHTED_KAPPA.xml
 Code-Files: STATS_WEIGHTED_KAPPA.py
-Misc-Files: STATS_WEIGHTED_KAPPA_DIALOG_HELP.htm,STATS_WEIGHTED_KAPPA_
- SYNTAX_HELP.htm,extsyntax.css,IBMdialogicon.png
+Misc-Files: STATS_WEIGHTED_KAPPA_DIALOG_HELP.htm,extsyntax.css,IBMdial
+ ogicon.png,STATS_WEIGHTED_KAPPA_SYNTAX_HELP.htm
 Summary: Weighted Kappa Statistic Using Linear or Quadratic Weights
 Description: Provides the weighted version of Cohen's kappa for two ra
  ters, using either linear or quadratic weights, as well as confidence
   interval and test statistic.
 Author: David Nichols, IBM SPSS
-Version: 1.2.1
-Product-Version: 19
+Version: 2.0.0
+Product-Version: 24
 Date: 5/14/15
+Product-Version-Maximum: 99
 Categories: spss statistics kappa
 Plugins: Python
+Python-Version: 3
+Translation-Catalogues: lang

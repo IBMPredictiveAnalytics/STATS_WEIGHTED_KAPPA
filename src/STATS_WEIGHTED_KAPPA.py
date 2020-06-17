@@ -1,8 +1,13 @@
-#IBM SPSS Products: Statistics General
-#(c) Copyright IBM Corp. 2009, 2015
-#US Government Users Restricted Rights - Use, duplication or disclosure 
-#restricted by GSA ADP Schedule Contract with IBM Corp.
-
+#/***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2020
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
 __author__ = "SPSS, DPN"
 __version__ = "1.2.1"
 
@@ -14,7 +19,7 @@ from spss import CellText
 def Run(args):
     """Execute the STATS WEIGHTED KAPPA command"""
 
-    args = args[args.keys()[0]]
+    args = args[list(args.keys())[0]]
 
     oobj = Syntax([
         Template("VARIABLES", subc="",  ktype="existingvarlist", var="variables", islist=True),
@@ -28,7 +33,7 @@ def Run(args):
     except:
         def _(msg):
             return msg
-    if args.has_key("HELP"):
+    if "HELP" in args:
         helper()
     else:
         processcmd(oobj, args, weightedkappaextension)
@@ -46,7 +51,7 @@ def helper():
 
     browser = webbrowser.get()
     if not browser.open_new(helpspec):
-        print(_("Help file not found:") + helpspec)
+        print((_("Help file not found:") + helpspec))
 try:    
     from extension import helper
 except:
@@ -197,9 +202,9 @@ AGGREGATE
    /%s=SD(%s)
    /%s=SD(%s).""" % (tmpvar2, varnames[0], tmpvar3, varnames[1]))
                 try:
-	            cur = spss.Cursor(isBinary=False)
+                    cur = spss.Cursor(isBinary=False)
                 except:
-	            cur = spss.Cursor()
+                    cur = spss.Cursor()
                 datarow = cur.fetchone()
                 cur.close()
                 sd1 = datarow[-2]
@@ -269,9 +274,9 @@ VARSTOCASES
 OMSEND TAG = ['"%s"'].""" % omstag2)
                     catdata = []
                     try:
-	                cur = spss.Cursor(isBinary=False)
+                        cur = spss.Cursor(isBinary=False)
                     except:
-	                cur = spss.Cursor()
+                        cur = spss.Cursor()
                     while True:
                         datarow = cur.fetchone()
                         if datarow is None:
@@ -442,9 +447,9 @@ OMS
  /DESTINATION VIEWER=NO
  /TAG = '"%s"'.""" % omstag6)
                         try:
-	                    cur = spss.Cursor(isBinary=False)
+                            cur = spss.Cursor(isBinary=False)
                         except:
-	                    cur = spss.Cursor()
+                            cur = spss.Cursor()
                         data=cur.fetchone()
                         cur.close()
                         spss.StartProcedure(_("Weighted Kappa"),"Weighted Kappa")
