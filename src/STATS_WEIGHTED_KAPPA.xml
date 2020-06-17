@@ -13,7 +13,7 @@
 <!--                                                                   -->
 <!-- ***************************************************************** -->
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Jon Peck (SPSS Inc.) -->
-<Command xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extension.xsd" Name="STATS WEIGHTED KAPPA" Language="Python" languageVersion="3">
+<Command xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extension.xsd" Name="STATS WEIGHTED KAPPA" Language="Python" LanguageVersion="3">
 	<Subcommand Name="" IsArbitrary="False" Occurrence="Optional">
 		<Parameter Name="VARIABLES" ParameterType="TokenList"/>
 	</Subcommand>
